@@ -48,6 +48,7 @@ export function Game() {
   const [winTrigger, setWinTrigger] = useState(0);
   const [loseTrigger, setLoseTrigger] = useState(0);
   const [shakeCard, setShakeCard] = useState(false);
+  const [lastGuessCorrect, setLastGuessCorrect] = useState(false);
 
   useEffect(() => {
     sdk.actions.ready().catch(() => {});
@@ -65,14 +66,15 @@ export function Game() {
     (direction: "higher" | "lower") => {
       if (gameState !== "playing") return;
       const next = rand(1, 99);
-      setNextNum(next);
-      setGuess(direction);
-      setGameState("revealed");
-
       const isCorrect =
         (direction === "higher" && next > currentNum) ||
         (direction === "lower" && next < currentNum) ||
         next === currentNum;
+
+      setNextNum(next);
+      setGuess(direction);
+      setLastGuessCorrect(isCorrect);
+      setGameState("revealed");
 
       setTimeout(() => {
         if (isCorrect) {
@@ -566,7 +568,7 @@ export function Game() {
             )}
 
             {/* Revealed feedback */}
-            {gameState === "revealed" && (
+            {gameState === "revealed" && lastGuessCorrect && (
               <div
                 style={{
                   fontSize: 18,
