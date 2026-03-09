@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Degen Flip ◆",
     description: "Can you build the streak? Higher or lower — risk it all.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    images: [{ url: "/api/og", width: 1200, height: 630 }],
   },
   other: {
     "fc:frame": "vNext",
-    "fc:frame:image": "https://degen-flip-delta.vercel.app/og.png",
+    "fc:frame:image": "https://degen-flip-delta.vercel.app/api/og",
     "fc:frame:button:1": "Play Degen Flip",
     "fc:frame:post_url": "https://degen-flip-delta.vercel.app",
   },
