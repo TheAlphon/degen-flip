@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 export const metadata: Metadata = {
   title: "Degen Flip",
   description: "Higher or lower number guessing game for Farcaster degens",
+  metadataBase: new URL("https://degen-flip-delta.vercel.app"),
   openGraph: {
     title: "Degen Flip ◆",
     description: "Can you build the streak? Higher or lower — risk it all.",
@@ -12,9 +13,9 @@ export const metadata: Metadata = {
   },
   other: {
     "fc:frame": "vNext",
-    "fc:frame:image": "https://degen-flip.vercel.app/og.png",
+    "fc:frame:image": "https://degen-flip-delta.vercel.app/og.png",
     "fc:frame:button:1": "Play Degen Flip",
-    "fc:frame:post_url": "https://degen-flip.vercel.app",
+    "fc:frame:post_url": "https://degen-flip-delta.vercel.app",
   },
 };
 
